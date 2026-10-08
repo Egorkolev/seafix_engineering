@@ -18,10 +18,11 @@ export default function PrivacyPage() {
         The quote form asks for your name, email, phone, the service you need,
         vessel type, and a message. Phone and vessel type are optional.
       </p>
-      <h2>How this site handles it</h2>
+      <h2>How we use it</h2>
       <p>
-        The form stays in your browser. It checks the fields and shows a
-        confirmation. It does not store the message or send it to a server.
+        We use these details to reply to your enquiry and prepare a quote. We
+        do not sell or share them with other companies. We keep them only as
+        long as needed to respond and follow up on the request.
       </p>
       <h2>Questions</h2>
       <p>
