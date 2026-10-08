@@ -33,20 +33,26 @@ export function CTABanner() {
           {/* Right Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
+              asChild
               size="lg"
               variant="secondary"
               className="bg-white text-primary hover:bg-white/90 font-semibold"
             >
-              <Phone className="mr-2 h-5 w-5" />
-              CALL US NOW
+              <a href="tel:+306983012050">
+                <Phone className="mr-2 h-5 w-5" />
+                CALL US NOW
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white/20 font-semibold"
             >
-              GET A QUOTE
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="#contact">
+                GET A QUOTE
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
         </motion.div>

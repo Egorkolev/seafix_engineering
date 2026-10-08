@@ -14,7 +14,7 @@ const features = [
 
 export function About() {
   return (
-    <section id="about" className="py-20 lg:py-32 bg-[#0D1526]">
+    <section id="about" className="scroll-mt-24 py-20 lg:py-32 bg-[#0D1526]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
@@ -27,8 +27,8 @@ export function About() {
           >
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1470&auto=format&fit=crop"
-                alt="Engineer on vessel deck"
+                src="https://images.unsplash.com/photo-1749867053314-ebfa14d9b9c4?q=80&w=1470&auto=format&fit=crop"
+                alt="Engineers working under a vessel hull"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D1526] via-transparent to-transparent" />
@@ -81,12 +81,15 @@ export function About() {
             </ul>
 
             <Button
+              asChild
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white/10 font-semibold"
             >
-              ABOUT US
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="#about">
+                ABOUT US
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </motion.div>
         </div>

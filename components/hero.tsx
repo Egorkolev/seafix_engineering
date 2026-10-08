@@ -14,13 +14,13 @@ const stats = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&auto=format&fit=crop')",
+            "url('https://images.unsplash.com/photo-1568347877321-f8935c7dc5a3?q=80&w=2070&auto=format&fit=crop')",
         }}
       />
       {/* Dark Overlay */}
@@ -71,19 +71,25 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Button
+              asChild
               size="lg"
               className="bg-primary hover:bg-[#1D4ED8] text-white font-semibold px-8"
             >
-              OUR SERVICES
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="#services">
+                OUR SERVICES
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white/10 font-semibold px-8"
             >
-              GET A QUOTE
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="#contact">
+                GET A QUOTE
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </motion.div>
 

@@ -4,32 +4,37 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
-import Link from "next/link"
 
 const projects = [
   {
+    id: "project-engine-overhaul",
     title: "Engine Overhaul",
     type: "Bulk Carrier",
+    href: "#engine-repair",
     image:
-      "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=1444&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1569875875269-6943dc3154c4?q=80&w=1470&auto=format&fit=crop",
   },
   {
+    id: "project-shaft-line",
     title: "Shaft Line Restoration",
     type: "Container Ship",
+    href: "#shaft-line",
     image:
-      "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1470&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1777315169375-5408ebea2734?q=80&w=1470&auto=format&fit=crop",
   },
   {
+    id: "project-ballast-coating",
     title: "Ballast Tank Coating",
     type: "Oil Tanker",
+    href: "#ballast-tank",
     image:
-      "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80&w=1470&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1672911920959-d68517d7a293?q=80&w=1470&auto=format&fit=crop",
   },
 ]
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 lg:py-32 bg-[#0A0E1A]">
+    <section id="projects" className="scroll-mt-24 py-20 lg:py-32 bg-[#0A0E1A]">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
@@ -63,13 +68,13 @@ export function Projects() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Link
-              href="#"
+            <a
+              href="#projects"
               className="inline-flex items-center text-primary hover:text-[#1D4ED8] font-semibold mt-4 md:mt-0 transition-colors"
             >
               VIEW ALL PROJECTS
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </motion.div>
         </div>
 
@@ -77,12 +82,15 @@ export function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.id}
+              id={project.id}
+              className="scroll-mt-28"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
+              <a href={project.href} className="block">
               <Card className="group relative overflow-hidden border-0 h-[350px] cursor-pointer">
                 {/* Image */}
                 <img
@@ -106,6 +114,7 @@ export function Projects() {
                   <ArrowRight className="h-5 w-5 text-white" />
                 </div>
               </Card>
+              </a>
             </motion.div>
           ))}
         </div>

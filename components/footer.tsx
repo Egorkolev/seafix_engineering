@@ -1,33 +1,34 @@
 "use client"
 
 import Link from "next/link"
-import { Anchor, Linkedin, Facebook, Instagram } from "lucide-react"
+import { Logo } from "@/components/logo"
+import { Linkedin, Facebook, Instagram } from "lucide-react"
 
 const footerLinks = {
   services: [
-    { name: "Engine Repair", href: "#" },
-    { name: "Shaft Line Services", href: "#" },
-    { name: "Ballast Tank Coating", href: "#" },
-    { name: "Welding Works", href: "#" },
+    { name: "Engine Repair", href: "/#engine-repair" },
+    { name: "Shaft Line Services", href: "/#shaft-line" },
+    { name: "Ballast Tank Coating", href: "/#ballast-tank" },
+    { name: "Welding Works", href: "/#welding" },
   ],
   industries: [
-    { name: "Commercial Shipping", href: "#" },
-    { name: "Offshore & Oil/Gas", href: "#" },
-    { name: "Yachts & Superyachts", href: "#" },
-    { name: "Government & Navy", href: "#" },
+    { name: "Commercial Shipping", href: "/#commercial-shipping" },
+    { name: "Offshore & Oil/Gas", href: "/#offshore-oil-gas" },
+    { name: "Yachts & Superyachts", href: "/#yachts" },
+    { name: "Government & Navy", href: "/#government-navy" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Our Projects", href: "#projects" },
-    { name: "Careers", href: "#" },
-    { name: "News & Updates", href: "#" },
+    { name: "About Us", href: "/#about" },
+    { name: "Our Projects", href: "/#projects" },
+    { name: "Careers", href: "/careers" },
+    { name: "News & Updates", href: "/news" },
   ],
 }
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/", label: "Instagram" },
 ]
 
 export function Footer() {
@@ -38,12 +39,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-border">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <Link href="#" className="flex items-center gap-2 mb-4">
-              <Anchor className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">
-                <span className="text-white">SeaFix</span>
-                <span className="text-primary">Engineering</span>
-              </span>
+            <Link href="/#home" className="inline-flex items-center mb-4">
+              <Logo className="h-14" />
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
               Your trusted partner for maritime engineering, repair, and
@@ -54,6 +51,8 @@ export function Footer() {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 >
@@ -122,13 +121,13 @@ export function Footer() {
           </p>
           <div className="flex gap-6">
             <Link
-              href="#"
+              href="/privacy"
               className="text-muted-foreground hover:text-primary transition-colors text-sm"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms"
               className="text-muted-foreground hover:text-primary transition-colors text-sm"
             >
               Terms of Use

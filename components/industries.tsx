@@ -14,19 +14,19 @@ import {
 import { motion } from "framer-motion"
 
 const industries = [
-  { icon: Ship, name: "Commercial Shipping" },
-  { icon: Anchor, name: "Offshore & Oil/Gas" },
-  { icon: Sailboat, name: "Yachts & Superyachts" },
-  { icon: Shield, name: "Government & Navy" },
-  { icon: Fish, name: "Fishing Vessels" },
-  { icon: Container, name: "Bulk Carrier" },
-  { icon: Droplet, name: "Oil Tanker" },
-  { icon: Users, name: "Cruise Ship" },
+  { id: "commercial-shipping", icon: Ship, name: "Commercial Shipping" },
+  { id: "offshore-oil-gas", icon: Anchor, name: "Offshore & Oil/Gas" },
+  { id: "yachts", icon: Sailboat, name: "Yachts & Superyachts" },
+  { id: "government-navy", icon: Shield, name: "Government & Navy" },
+  { id: "fishing-vessels", icon: Fish, name: "Fishing Vessels" },
+  { id: "bulk-carrier", icon: Container, name: "Bulk Carrier" },
+  { id: "oil-tanker", icon: Droplet, name: "Oil Tanker" },
+  { id: "cruise-ship", icon: Users, name: "Cruise Ship" },
 ]
 
 export function Industries() {
   return (
-    <section className="py-20 lg:py-32 bg-[#0D1526]">
+    <section id="industries" className="scroll-mt-24 py-20 lg:py-32 bg-[#0D1526]">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -57,9 +57,11 @@ export function Industries() {
         {/* Industries Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
           {industries.map((industry, index) => (
-            <motion.div
-              key={index}
-              className="group bg-card hover:bg-card/80 border border-border hover:border-primary/50 rounded-lg p-6 text-center transition-all duration-300 cursor-pointer"
+            <motion.a
+              key={industry.id}
+              id={industry.id}
+              href="#contact"
+              className="group scroll-mt-28 bg-card hover:bg-card/80 border border-border hover:border-primary/50 rounded-lg p-6 text-center transition-all duration-300 cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
@@ -72,7 +74,7 @@ export function Industries() {
               <h3 className="text-white font-medium text-sm md:text-base">
                 {industry.name}
               </h3>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

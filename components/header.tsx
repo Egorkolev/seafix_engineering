@@ -3,14 +3,15 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Anchor, Phone, ArrowRight, Menu, X } from "lucide-react"
+import { Logo } from "@/components/logo"
+import { Phone, ArrowRight, Menu, X } from "lucide-react"
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/#home" },
+  { name: "Services", href: "/#services" },
+  { name: "About", href: "/#about" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 export function Header() {
@@ -36,12 +37,8 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-2">
-            <Anchor className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">
-              <span className="text-white">SeaFix</span>
-              <span className="text-primary">Engineering</span>
-            </span>
+          <Link href="/#home" className="flex items-center shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
+            <Logo className="h-12 md:h-[52px]" priority />
           </Link>
 
           {/* Desktop Navigation */}
@@ -66,9 +63,11 @@ export function Header() {
               <Phone className="h-4 w-4" />
               <span className="text-sm">+1 (305) 555-0198</span>
             </a>
-            <Button className="bg-primary hover:bg-[#1D4ED8] text-white font-semibold">
-              GET A QUOTE
-              <ArrowRight className="ml-2 h-4 w-4" />
+            <Button asChild className="bg-primary hover:bg-[#1D4ED8] text-white font-semibold">
+              <a href="/#contact">
+                GET A QUOTE
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
 
@@ -108,9 +107,11 @@ export function Header() {
               <Phone className="h-4 w-4" />
               <span>+1 (305) 555-0198</span>
             </a>
-            <Button className="bg-primary hover:bg-[#1D4ED8] text-white font-semibold w-full mt-2">
-              GET A QUOTE
-              <ArrowRight className="ml-2 h-4 w-4" />
+            <Button asChild className="bg-primary hover:bg-[#1D4ED8] text-white font-semibold w-full mt-2">
+              <a href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                GET A QUOTE
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </nav>
         </div>
